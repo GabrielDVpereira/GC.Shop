@@ -1,6 +1,6 @@
 import React from "react";
 import { Routes } from './routes'; 
-import { GlobalStyles } from './styles/global'
+import { GlobalStyles, AppContainer } from './styles/global'
 import { ToastContainer } from 'react-toastify'
 import { BrowserRouter } from "react-router-dom";
 import { Header } from './components/templates'
@@ -11,7 +11,9 @@ function App() {
       <GlobalStyles />
       <ToastContainer autoClose={3000}/>
       <Header />
-      <Routes />
+      <AppContainer>
+        <Routes />
+      </AppContainer>
     </BrowserRouter>
   );
 }

@@ -1,5 +1,5 @@
 export function Home(){
   return(
-    <h1>Home</h1>
+    <h2>Best Smartphones in town</h2>
   )
 }

@@ -1,5 +1,10 @@
-import { createGlobalStyle } from 'styled-components'; 
+import styled, { createGlobalStyle } from 'styled-components'; 
 import 'react-toastify/dist/ReactToastify.css';
+
+export const AppContainer = styled.div`
+  margin-top: 7rem;
+  padding: 0 2rem;
+`; 
 
 export const GlobalStyles =  createGlobalStyle`
   :root {
@@ -36,9 +41,13 @@ export const GlobalStyles =  createGlobalStyle`
     font-family: 'Montserrat';
     font-weight: 400;
   }
-
-  h1, h2, h3 ,h4 , h5 ,h5, strong {
+  
+  h1, h2, h3 ,h4 , h5 {
+    color: var(--dark);
+  }
+  h1, h2, h3 ,h4 , h5, strong {
       font-weight: 600;
+
   }
 
   button {
