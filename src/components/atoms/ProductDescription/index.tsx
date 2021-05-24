@@ -4,9 +4,12 @@ interface ProductDescriptionProps {
   description: string; 
 }
 export function ProductDescription({ description }: ProductDescriptionProps){
+  const sliceDescription = (title: string) => {
+    return title.slice(0, 50) + "..."
+  }
   return(
     <Container>
-      <span>{description}</span>
+      <span>{sliceDescription(description)}</span>
     </Container>
   )
 }
