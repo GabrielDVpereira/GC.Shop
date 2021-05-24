@@ -1,7 +1,6 @@
 import { Container } from './styles'; 
 import { ProductContent } from '../../molecules'; 
 
-
 interface ProductCardProps {
   product: {
     "id": number
@@ -11,11 +10,10 @@ interface ProductCardProps {
   }
 }
 
-export function ProductCard({ product }: ProductCardProps){
-  const newProduct = {...product, isFavorite: true}
+export function ProductCard({ product }: ProductCardProps){  
   return(
     <Container>
-      <ProductContent product={newProduct} />
+      <ProductContent product={product} />
     </Container>
   )
 }

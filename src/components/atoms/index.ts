@@ -4,3 +4,6 @@ export { FavoriteButton } from './FavoriteButton';
 export { ProductDescription } from './ProductDescription'; 
 export { ProductImage } from './ProductImage'; 
 export { ProductPrice } from './ProductPrice'; 
+
+
+// TODO extends the implementation of something
