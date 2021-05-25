@@ -1,15 +1,15 @@
 import { toast } from "react-toastify";
-import { api } from "../../interfaces/http"
 import { FETCH_PRODUCTS, LOADING_PRODUCTS, REMOVE_PRODCUT_FAV, SAVE_PRODCUT_FAV } from "./actionTypes";
 import { DispatchType } from "./types";
+import { http } from '../../services/http'
 
 export function fetchProductsAction(){
   return async (dispatch: DispatchType) => {
 
     dispatch({type: LOADING_PRODUCTS, loading: true})
     try{
-      const respose = await api.get('/products'); 
-      const products = respose.data; 
+      const respose = await http.get('/products'); 
+      const products = respose.body; 
       dispatch({type: FETCH_PRODUCTS, products})
     }catch(err){
       toast.error("Something happend")
