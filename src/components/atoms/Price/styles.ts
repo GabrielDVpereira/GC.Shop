@@ -1,7 +1,5 @@
 import styled from 'styled-components'; 
 
-export const Container = styled.div`
-  span {
+export const Value = styled.div`
     font-weight: 800;
-  }
 `; 

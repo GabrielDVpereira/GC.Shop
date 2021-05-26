@@ -1,11 +1,6 @@
 import axios, { AxiosInstance } from 'axios'; 
 import { Http, HttpResponse } from '../protocols/http';
 
-
-
-// TODO make an interface that implements axios so we don't git too much responsability to this library
-// TODO see a good design pattern to this case
-
 class HttpRequest implements Http {
   private readonly api: AxiosInstance
   constructor(baseURL: string){
