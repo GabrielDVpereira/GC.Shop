@@ -1,11 +1,15 @@
 import { Container } from "./styles";
-import { LoginButton, WishListButton } from "../../molecules";
+import { LinkWithIcon } from "../../molecules";
+import { AiFillHeart } from 'react-icons/ai'; 
+import { FaUserCircle } from 'react-icons/fa'; 
+
+
 
 export function HeaderNav(){
   return (
   <Container>
-    <WishListButton />
-    <LoginButton />
+    <LinkWithIcon icon={ <AiFillHeart />} title="Wishlist" path="/" />
+    <LinkWithIcon icon={ <FaUserCircle />} title="Login"  path="/"/>
   </Container>
   )
 }

@@ -1,6 +1,5 @@
 export { SearchBar } from './SearchBar'
 export { HeaderTitle } from './HeaderTitle'
-export { LoginButton } from './LoginButton'
-export { WishListButton } from './WishListButton'
 export { Banner } from './Banner'
 export { ProductContent } from './ProductContent'
+export { LinkWithIcon } from './LinkWithIcon'
