@@ -1,5 +1,5 @@
 import { Container, ProductPriceAndFav } from './styles'
-import { Description, ProductImage, Price, FavoriteButton} from '../../atoms'
+import { Description, Image, Price, HeartButton} from '../../atoms'
 import { useDispatch, useSelector } from 'react-redux';
 import { IReduxState } from '../../../store';
 import { removeProductFavoriteAction, saveProductFavoriteAction } from '../../../store/productsStore/actions';
@@ -32,11 +32,11 @@ export function ProductContent({ product } : ProductContentProps ){
   
   return(
     <Container>
-      <ProductImage alt={product.title} url={product.url}/>
+      <Image alt={product.title} src={product.url} className="card"/>
       <Description description={product.title} textLimit={50} className="dark"/>
       <ProductPriceAndFav>
         <Price price={product.price} />
-        <FavoriteButton 
+        <HeartButton 
           onAddFavorite={onAddFavorite} 
           onRemoveFavorite={onRemoveFavorite} 
           isFavorite={checkIfIsFav(product.id)}

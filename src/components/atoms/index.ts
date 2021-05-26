@@ -1,8 +1,8 @@
 export { Logo } from './Logo'; 
 export { SiteName } from './SiteName'; 
-export { FavoriteButton } from './FavoriteButton'; 
+export { HeartButton } from './HeartButton'; 
 export { Description } from './Description'; 
-export { ProductImage } from './ProductImage'; 
+export { Image } from './Image'; 
 export { Price } from './Price'; 
 
 

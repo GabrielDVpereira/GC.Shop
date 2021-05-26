@@ -7,7 +7,7 @@ interface FavoriteButtonProps {
   onRemoveFavorite: () => void; 
 }
 
-export function FavoriteButton({isFavorite, onAddFavorite, onRemoveFavorite}: FavoriteButtonProps){
+export function HeartButton({isFavorite, onAddFavorite, onRemoveFavorite}: FavoriteButtonProps){
   return(
     <Container>
       {

@@ -7,7 +7,7 @@ export const Container = styled.nav`
   top: 0px;
   right: 0px;
   left: 0px;
-  box-shadow: 0px 0px 5px #000;
+  box-shadow: 0px 0px 1px #000;
   z-index: 2;
 
 `
