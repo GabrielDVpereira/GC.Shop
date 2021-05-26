@@ -4,10 +4,18 @@ import { IProduct } from '../../../store/productsStore';
 import { ProductCard } from '../../organisms';
 import { Container } from './styles'; 
 
+interface ProductListProps {
+  favorites?: boolean
+}
 
-export function ProductList(){
+export function ProductList({ favorites = false } : ProductListProps){
   // TODO usually templates are pages, so we can use it as pages
-  const products = useSelector<IReduxState, IProduct[]>(state => state.products.products); 
+  let products = useSelector<IReduxState, IProduct[]>(state =>{
+      if(favorites){
+        return state.products.products.filter(product => state.products.favProductIds.includes(product.id))
+      }
+      return state.products.products
+    });
 
   return(
     <Container>

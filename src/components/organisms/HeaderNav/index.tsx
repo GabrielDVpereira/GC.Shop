@@ -8,7 +8,7 @@ import { FaUserCircle } from 'react-icons/fa';
 export function HeaderNav(){
   return (
   <Container>
-    <LinkWithIcon icon={ <AiFillHeart />} title="Wishlist" path="/" />
+    <LinkWithIcon icon={ <AiFillHeart />} title="Wishlist" path="/wishlist" />
     <LinkWithIcon icon={ <FaUserCircle />} title="Login"  path="/"/>
   </Container>
   )
