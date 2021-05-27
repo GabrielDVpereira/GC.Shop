@@ -5,6 +5,10 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  span:first-of-type {
+    margin-top: 0.5rem;
+  }
 `
 
 export const ProductPriceAndFav = styled.div`

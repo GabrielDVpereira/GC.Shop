@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux';
 import { IReduxState } from '../../../store';
 import { IProduct } from '../../../store/productsStore';
-import { ProductCard } from '../../organisms';
+import { ProductCard, NoFavBanner } from '../../organisms';
 import { Container } from './styles'; 
 
 interface ProductListProps {
@@ -9,21 +9,23 @@ interface ProductListProps {
 }
 
 export function ProductList({ favorites = false } : ProductListProps){
-  // TODO usually templates are pages, so we can use it as pages
-  let products = useSelector<IReduxState, IProduct[]>(state =>{
-      if(favorites){
-        return state.products.products.filter(product => state.products.favProductIds.includes(product.id))
-      }
+  let products = useSelector<IReduxState, IProduct[]>(state => {
+      const isFilterActive = state.products.filterActive; 
+      if(isFilterActive){
+        return state.products.filteredProducts
+      } 
       return state.products.products
     });
 
+    const renderList = () => {
+      return products.map((product) => <ProductCard key={product.id} product={product}/>)
+    }
+
+    const renderMessage = () => <NoFavBanner />
+
   return(
     <Container>
-      {
-        products.map((product) => {
-          return <ProductCard key={product.id} product={product}/>
-        })
-      }
+      {products.length ? renderList() : renderMessage()}
     </Container>
   )
 }

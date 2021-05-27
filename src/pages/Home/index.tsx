@@ -8,11 +8,15 @@ import { fetchProductsAction } from '../../store/productsStore';
 
 export function Home(){
   const isLoading = useSelector<IReduxState, boolean >(state => state.products.loading); 
+  const hasProducts = useSelector<IReduxState, boolean>(state => !!state.products.products.length); 
+
   const dispatch = useDispatch(); 
 
   useEffect(() => {
-    dispatch(fetchProductsAction())
-  }, [dispatch]); 
+    if(!hasProducts){
+      dispatch(fetchProductsAction())
+    }
+  }, [dispatch, hasProducts]); 
 
   return(
     <>
